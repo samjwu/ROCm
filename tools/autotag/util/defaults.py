@@ -52,7 +52,7 @@ def processor_factory():
                 latest_match = match
 
             data.message = (
-                f"{match['lib_name']} {match['lib_version']} for ROCm"
+                f"{match['lib_name']}{' ' + match['lib_version'] if match['lib_version'] else ''} for ROCm"
                 f" {data.full_version}"
             )
             data.notes = match["body"]

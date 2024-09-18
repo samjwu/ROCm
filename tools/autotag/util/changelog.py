@@ -23,6 +23,9 @@ class Changelog():
         for rocm_version, release in releases.items():
             for lib_name, lib in release.libraries.items():
                 lib_version = lib.lib_version
+                # Account for libraries without specific version number
+                if lib_version is None:
+                    lib.lib_version = "N/A"
                 if lib_version not in rocm_ver_by_lib_ver[lib_name]:
                     # New lib version in this rocm_release.
                     rocm_ver_by_lib_ver[lib_name][lib_version] = rocm_version

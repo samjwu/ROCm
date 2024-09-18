@@ -26,10 +26,10 @@ To generate the changelog from 5.0.0 up to and including 6.1.2:
 python3 tag_script.py -t $GITHUB_ACCESS_TOKEN --no-release --no-pulls --starting-version=5.0.0 --compile_file ../../CHANGELOG.md --branch release/rocm-rel-6.1 6.1.2
 ```
 
-To generate the release notes only for 6.1.2:
+To generate the release notes only for 6.2.0:
 
 ```sh
-python3 tag_script.py -t $GITHUB_ACCESS_TOKEN --no-release --no-pulls --compile_file ../../RELEASE.md --branch release/rocm-rel-6.1 6.1.2
+python3 tag_script.py -t $GITHUB_ACCESS_TOKEN --no-release --no-pulls --compile_file ../../RELEASE.md --branch release/rocm-rel-6.2 6.2.0
 ```
 
 ### Notes

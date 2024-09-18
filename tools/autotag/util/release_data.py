@@ -106,18 +106,18 @@ class ReleaseLib:
         print(f"Repo: {self.qualified_repo}")
         print(f"Tag Version: '{self.tag}'")
         print(f"Release Message: '{self.data.message}'")
-        print(f"Release Notes:\n{self.data.notes}")
+        # print(f"Release Notes:\n{self.data.notes}")
         print(f"Release Commit: '{self.commit}'")
         if get_yn_input("Would you like to create this tag and release?", release_yn):
             try:
                 print("Performing tag and release.")
                 release = self.repo.create_git_tag_and_release(
-                    self.tag,
-                    self.data.message,
-                    self.data.message,
-                    self.data.notes,
-                    self.commit,
-                    "commit",
+                    tag=self.tag,
+                    tag_message=self.data.message,
+                    release_name=self.data.message,
+                    release_message=self.data.notes,
+                    object=self.commit,
+                    type="commit",
                 )
                 if self.rocm_version != self.full_version:
                     self.repo.create_git_tag(
